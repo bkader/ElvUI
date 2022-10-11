@@ -7,7 +7,7 @@ Description: Database of spellID's duration and debuff type.
 Dependencies: LibStub
 ]]
 
-local MAJOR, MINOR = "LibAuraInfo-1.0-ElvUI", 18
+local MAJOR, MINOR = "LibAuraInfo-1.0-ElvUI", 19
 if not LibStub then error(MAJOR .. " requires LibStub") return end
 
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
@@ -142,6 +142,7 @@ do
 			if not name then break end
 
 			duration = Round(duration)
+			unitCaster = unitCaster or 'none'
 
 			if not lib.spellDuration[spellID] then
 				lib.spellDuration[spellID] = duration
